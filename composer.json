@@ -1,0 +1,16 @@
+{
+    "name": "bookfrank/viaduct",
+    "description": "Viaduct is a very simple php router, hope to be able to help the php-framework beginners to understand the principle of router better",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Frank",
+            "email": "bookfrank@foxmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.5.9"
+    }
+}
