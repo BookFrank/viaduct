@@ -114,7 +114,6 @@ class Router{
 			}
 			switch ($handlerType) {
 				case 'string':
-					require "./IndexController.class.php";
 					$handlerArr = explode("@", $handler);
 					call_user_func_array([$handlerArr[0], $handlerArr[1]],$param);
 					break;
@@ -125,7 +124,6 @@ class Router{
 		}else{
 			switch ($handlerType) {
 				case 'string':
-					require "./IndexController.class.php";
 					$handlerArr = explode("@", $handler);
 					call_user_func([$handlerArr[0], $handlerArr[1]]);
 					break;
