@@ -70,7 +70,7 @@ class Router{
 		if (in_array($uri, self::$routes)) { # in_array则为普通路由
 			$indexArr = array_keys(self::$routes, $uri);
 		}else{
-			$uriArr = explode("/", $uri); # 判断是否为可变路由
+			$uriArr = explode("/", $uri); # 可变路由
 			foreach (self::$routes as $route) {					
 				if (stripos($route, "{") !== false) {
 					$routeArr = explode("/", $route); # 转换为数组，比对所有不被括号包住的
@@ -108,14 +108,14 @@ class Router{
 			$uriArr = explode("/", $uri);
 			$param = [];
 			for ($i=0; $i < count($uriArr); $i++) { 
-				if (stripos($routeArr[$i],"{") !== false) {
-					$param[] = $uriArr[$i];
-				}
+				if (stripos($routeArr[$i],"{") !== false) { $param[] = $uriArr[$i];	}
 			}
 			switch ($handlerType) {
 				case 'string':
 					$handlerArr = explode("@", $handler);
-					call_user_func_array([$handlerArr[0], $handlerArr[1]],$param);
+					$class = trim($handlerArr[0]);
+					$refMethod = new \ReflectionMethod($class, trim($handlerArr[1]));
+					$refMethod->invokeArgs(new $class, $param);
 					break;
 				case 'object':
 					call_user_func_array($handler,$param);
@@ -125,7 +125,8 @@ class Router{
 			switch ($handlerType) {
 				case 'string':
 					$handlerArr = explode("@", $handler);
-					call_user_func([$handlerArr[0], $handlerArr[1]]);
+					$refMethod = new \ReflectionMethod(trim($handlerArr[0]), trim($handlerArr[1]));
+					$refMethod->invoke(trim($handlerArr[1]));
 					break;
 				case 'object':
 					call_user_func($handler);
