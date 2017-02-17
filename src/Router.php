@@ -125,8 +125,9 @@ class Router{
 			switch ($handlerType) {
 				case 'string':
 					$handlerArr = explode("@", $handler);
+					$class = trim($handlerArr[0]);
 					$refMethod = new \ReflectionMethod(trim($handlerArr[0]), trim($handlerArr[1]));
-					$refMethod->invoke(trim($handlerArr[1]));
+					$refMethod->invoke(new $class);
 					break;
 				case 'object':
 					call_user_func($handler);
