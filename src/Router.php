@@ -108,7 +108,14 @@ class Router{
 			$uriArr = explode("/", $uri);
 			$param = [];
 			for ($i=0; $i < count($uriArr); $i++) { 
-				if (stripos($routeArr[$i],"{") !== false) { $param[] = $uriArr[$i];	}
+				if (stripos($routeArr[$i],"{") !== false) { 
+					if (stripos($uriArr[$i], ".") !== false && stripos($routeArr[$i],".") !== false) {
+						$uriSegArr = explode(".", $uriArr[$i]);  # eg. abc.html 
+						$param[] = $uriSegArr[0];
+					}else{
+						$param[] = $uriArr[$i];
+					}
+				}
 			}
 			switch ($handlerType) {
 				case 'string':
