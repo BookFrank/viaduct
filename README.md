@@ -59,6 +59,11 @@ class FooController{
 ```
 
 
+### Contact me
+
+Author: Frank   
+
+Email: bookfrank@foxmail.com
 
 
 
