@@ -1,6 +1,13 @@
 <?php  
 namespace Bookfrank\Viaduct;
 
+/**
+ * Created on 2017-01-03
+ *
+ * 路由实现类
+ *
+ * @author Frank
+ */
 class Router{
 
 	public static $routes = [];
@@ -38,7 +45,7 @@ class Router{
 
 	/**
 	 * 查看路由列表
-	 * @return table
+	 * @return <html>table</html>
 	 */
 	public static function listAll()
 	{
