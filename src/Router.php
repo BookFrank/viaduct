@@ -6,7 +6,7 @@ namespace Bookfrank\Viaduct;
  *
  * 路由实现类
  *
- * @author Frank
+ * @author Frank <bookfrank@foxmail.com>
  */
 class Router{
 
