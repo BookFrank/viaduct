@@ -51,8 +51,7 @@ Router::dispatch();
 ```php
 <?php
 class FooController{
-	public function bar($id)
-    {
+	public function bar($id){
     	echo "id is ".$id;
     }
 }
@@ -61,7 +60,7 @@ class FooController{
 
 ### Contact me
 
-Author: Frank   
+Author: Frank 李扬
 
 Email: bookfrank@foxmail.com
 
