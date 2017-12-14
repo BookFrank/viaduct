@@ -2,8 +2,6 @@
 namespace Bookfrank\Viaduct;
 
 /**
- * Created on 2017-01-03
- *
  * 路由实现类
  *
  * @author Frank <bookfrank@foxmail.com>
