@@ -1,12 +1,12 @@
 ## Viaduct 高架桥
 
-Viaduct is a simple and quick PHP router.
+Viaduct is a simple but quick PHP router.
 
 > Viaduct is a very simple php router, hope to be able to help the php-framework beginners to understand the principle of router better.
 
 ### Features
 
-* Simple
+* Simple 
 * One-file (only 6 functions)
 * Laravel-like routes
 
